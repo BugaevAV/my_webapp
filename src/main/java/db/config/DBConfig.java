@@ -1,7 +1,6 @@
 package db.config;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +23,11 @@ import java.util.Properties;
 @ComponentScan("db")
 public class DBConfig {
 
-    @Autowired
     private Environment env;
+
+    public DBConfig (Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public DataSource dataSource() {
