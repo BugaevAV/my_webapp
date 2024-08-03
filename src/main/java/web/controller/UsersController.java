@@ -40,7 +40,7 @@ public class UsersController {
     }
 
     @GetMapping(value = "/delete_user/{id}")
-    public String deleteUser(ModelMap model, @PathVariable int id) {
+    public String deleteUser(@PathVariable int id) {
         getUserService().deleteUser(id);
         return "redirect:/";
     }
